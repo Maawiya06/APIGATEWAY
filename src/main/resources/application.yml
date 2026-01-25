@@ -5,6 +5,24 @@ spring:
   application:
     name: API-GATEWAY
 
+  cloud:
+    gateway:
+      routes:
+        - id: USERSERVICES
+          uri: lb://USERSERVICES
+          predicates:
+            - Path= /users/**
+
+        - id: RATINGSERVICES
+          uri: lb://RATINGSERVICES
+          predicates:
+            - Path= /ratings/**
+
+        - id: HOTELSERVICE
+          uri: lb://USERSERVICES
+          predicates:
+            - Path= /hotels/**
+
 eureka:
   instance:
     prefer-ip-address: true
