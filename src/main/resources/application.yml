@@ -5,7 +5,6 @@ spring:
   application:
     name: API-GATEWAY
 
-
   cloud:
     gateway:
       discovery:
@@ -17,15 +16,9 @@ spring:
           predicates:
             - Path=/users/**
 
-#        - id: RATINGSERVICES
-#          uri: lb://ratingServices
-#          predicates:
-#            - Path=/ratings/**
-#
-#        - id: HOTELSERVICE
-#          uri: lb://HotelService
-#          predicates:
-#            - Path=/hotels/**
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
 
 eureka:
   instance:
