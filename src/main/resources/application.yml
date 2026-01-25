@@ -5,23 +5,27 @@ spring:
   application:
     name: API-GATEWAY
 
+
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: USERSERVICES
           uri: lb://USERSERVICES
           predicates:
-            - Path= /users/**
+            - Path=/users/**
 
-        - id: RATINGSERVICES
-          uri: lb://RATINGSERVICES
-          predicates:
-            - Path= /ratings/**
-
-        - id: HOTELSERVICE
-          uri: lb://USERSERVICES
-          predicates:
-            - Path= /hotels/**
+#        - id: RATINGSERVICES
+#          uri: lb://ratingServices
+#          predicates:
+#            - Path=/ratings/**
+#
+#        - id: HOTELSERVICE
+#          uri: lb://HotelService
+#          predicates:
+#            - Path=/hotels/**
 
 eureka:
   instance:
