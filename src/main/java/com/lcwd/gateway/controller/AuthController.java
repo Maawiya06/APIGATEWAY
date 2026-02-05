@@ -1,5 +1,6 @@
 package com.lcwd.gateway.controller;
 
+import com.lcwd.gateway.models.AuthResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -15,5 +16,7 @@ public class AuthController {
 
     @GetMapping("login")
     public ResponseEntity<AuthResponse>login(){
+
+        return new ResponseEntity<>();
     }
 }
