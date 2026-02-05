@@ -15,5 +15,5 @@ public class AuthResponse {
     private String accessToken;
     private String refreshToken;
     private long expireAt;
-    private Collection<String> authorise;
+    private Collection<String> authorities;
 }
