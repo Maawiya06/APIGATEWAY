@@ -29,8 +29,8 @@ spring:
       client:
         registration:
           auth0:
-            client-id: gGYXyvHMgHdYUZbXCbGzYlB4IimAYWj0
-            client-secret: _YAaRccgLDkKul5uIBnKSN-eTlaY_g4btg3dknyPXGYobreGW-mixoc1QsPn2eBy
+            client-id: yWS6TInHM1xG5EHiqY77Fe7vB2hLTzbg
+            client-secret: SN7CT9jlI3ZVRNTQMcKHszoT0S86mCXp3PbU75crSuMxwDHB85haH6TC5Oh0RwFz
             scope: openid, profile, email, offline_access
             redirect-url:
 
