@@ -23,8 +23,21 @@ spring:
           uri: lb://RATINGSERVICES
           predicates:
             - Path=/ratings/**
+#  okta configurations
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: gGYXyvHMgHdYUZbXCbGzYlB4IimAYWj0
+            client-secret: _YAaRccgLDkKul5uIBnKSN-eTlaY_g4btg3dknyPXGYobreGW-mixoc1QsPn2eBy
+            scope: openid, profile, email, offline_access
+            redirect-url:
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+
+
