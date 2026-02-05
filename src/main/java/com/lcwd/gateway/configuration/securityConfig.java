@@ -11,18 +11,21 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class securityConfig {
 
     @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity){
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
 
-        httpSecurity
-                .authorizeExchange()
-                .anyExchange()
-                .authenticated()
+        http
+                .csrf(csrf -> csrf.disable())
+                .authorizeExchange(exchange -> exchange
+                        .pathMatchers("/").permitAll()
+                        .anyExchange().authenticated()
+                )
+                .oauth2Login()   // IMPORTANT for redirect login
                 .and()
                 .oauth2Client()
                 .and()
                 .oauth2ResourceServer()
                 .jwt();
 
-        return httpSecurity.build();
+        return http.build();
     }
 }

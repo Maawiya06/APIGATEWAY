@@ -23,19 +23,23 @@ spring:
           uri: lb://RATINGSERVICES
           predicates:
             - Path=/ratings/**
-#  okta configurations
-  security:
-    oauth2:
-      client:
-        registration:
-          auth0:
-            client-id: yWS6TInHM1xG5EHiqY77Fe7vB2hLTzbg
-            client-secret: SN7CT9jlI3ZVRNTQMcKHszoT0S86mCXp3PbU75crSuMxwDHB85haH6TC5Oh0RwFz
-            scope: openid, profile, email, offline_access
-            redirect-url: "http://localhost:8084/login/oauth2/code/auth0"
-        provider:
-          auth0:
-            issuer-uri: https://dev-o06xhal02nbz8jqa.us.auth0.com/
+##  okta configurations
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          auth0:
+#            client-id: yWS6TInHM1xG5EHiqY77Fe7vB2hLTzbg
+#            client-secret: SN7CT9jlI3ZVRNTQMcKHszoT0S86mCXp3PbU75crSuMxwDHB85haH6TC5Oh0RwFz
+#            scope: openid, profile, email, offline_access
+#            redirect-url: "http://localhost:8084/login/oauth2/code/auth0"
+#        provider:
+#          auth0:
+#            issuer-uri: https://dev-o06xhal02nbz8jqa.us.auth0.com/
+#      resourceserver:
+#        jwt:
+#          issuer-uri: https://dev-o06xhal02nbz8jqa.us.auth0.com/
+
 
 eureka:
   client:
