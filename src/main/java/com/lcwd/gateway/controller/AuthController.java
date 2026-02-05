@@ -1,0 +1,4 @@
+package com.lcwd.gateway.controller;
+
+public class AuthController {
+}
